@@ -1,5 +1,5 @@
 //Defining the enum itself. It has the PartialEq and Eq traits so that squares can be compared. It
-//has the copy and clone traits exist so that that Square's are implicitly copied when being passed
+//has the copy and clone traits exist so that that Squares are implicitly copied when being passed
 //around in code.
 #[derive(PartialEq, Eq)]
 pub enum Square {

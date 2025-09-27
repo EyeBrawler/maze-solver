@@ -40,7 +40,7 @@ impl Maze {
         let width = dimensions[0].parse::<usize>().map_err(|_| "Invalid width");
         let height = dimensions[1].parse::<usize>().map_err(|_| "Invalid height");
 
-        //Read thee rest of the lines to construct the layout of the maze.
+        //Read the rest of the lines to construct the layout of the maze.
         let mut layout = Vec::new();
 
         for (i, line) in lines.enumerate() {
@@ -59,14 +59,14 @@ impl Maze {
                 ));
             }
 
-            //Add the row to the layput vector
+            //Add the row to the layout vector
             layout.push(row);
         }
 
         //Check if there are too many or too little rows based on maze dimensions
         if layout.len() != height? {
             return Err(format!(
-                "Number of rows dooes not match expected height of {}",
+                "Number of rows does not match expected height of {}",
                 height?
             ));
         }
@@ -80,7 +80,7 @@ impl Maze {
         })
     }
 
-    //Method to find the starting location of the a maze.
+    //Method to find the starting location of the maze.
     //Returns a Location struct wrapped in an option (in case there is no start)
     fn find_start(&self) -> Option<Location> {
         //Nested for loop to look through all locations
@@ -95,7 +95,7 @@ impl Maze {
     }
 
     //Method to find the finish location of a maze.
-    //Returns a Location stuct wrapped in an option (just in case there is no finish).
+    //Returns a Location struct wrapped in an option (just in case there is no finish).
     fn find_finish(&self) -> Option<Location> {
         for y in 0..self.height {
             for x in 0..self.width {
@@ -107,7 +107,7 @@ impl Maze {
         None
     }
 
-    //Retuns if a given spot in the maze is open (or walkable)
+    //Returns if a given spot in the maze is open (or walkable)
     pub fn is_open(&self, location: Location) -> bool {
         let x = location.x;
         let y = location.y;
@@ -121,7 +121,7 @@ impl Maze {
             Square::Open | Square::Start | Square::Finish
         )
     }
-    //A function to solve a maze. It can accept any kind of stucture that implements the agenda trait as a
+    //A function to solve a maze. It can accept any kind of structure that implements the agenda trait as a
     //parameter for the function. This allows both MyStack and MyQueue can share the same function.
     //It returns a boolean for if the maze can be solved or not.
 
@@ -168,7 +168,7 @@ impl Maze {
                 }
             }
         }
-        //Priting the final state of the maze when no solution has been found
+        //Printing the final state of the maze when no solution has been found
         false // No solution was found.
     }
 

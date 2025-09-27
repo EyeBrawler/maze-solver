@@ -17,7 +17,7 @@ fn main() {
     //Defining the mazes directory
     let mazes_dir = "mazes";
 
-    //Rreading all filees in the direectory and storing them in a variable called entries.
+    //Reading all files in the directory and storing them in a variable called entries.
     let entries = fs::read_dir(mazes_dir).expect("Failed to Read the Directory");
 
     for entry in entries {
@@ -31,7 +31,7 @@ fn main() {
             println!("Loading maze from file: {:?}", path);
 
             //Reading the files contents
-            let input = fs::read_to_string(&path).expect("Failed to read the mmaze file");
+            let input = fs::read_to_string(&path).expect("Failed to read the maze file");
 
             //Attempt to create a maze from the file's contents
             //Solving the maze with each algorithm
