@@ -3,8 +3,6 @@
 A Rust-based maze solver that demonstrates **depth-first search (DFS)** and **breadth-first search (BFS)** using custom stack and queue implementations.  
 The program loads mazes from `.txt` files, visualizes the solving process in the terminal with colored output, and shows whether each maze can be solved.
 
----
-
 ## Features
 
 - Parse and validate maze definitions from text files.
@@ -20,8 +18,6 @@ The program loads mazes from `.txt` files, visualizes the solving process in the
     - `*` → finish
 - Modular design with traits (`Agenda`), generics, and custom data structures.
 
----
-
 ## Project Structure
 ```bash
 src/
@@ -33,14 +29,10 @@ src/
 mazes/ # Place your maze .txt files here
 ```
 
----
-
 ## Requirements
 
 - [Rust](https://www.rust-lang.org/tools/install) (latest stable)
 - A terminal that supports ANSI escape codes for colored output (e.g., most Linux/macOS terminals, or Windows Terminal)
-
----
 
 ## Setup & Usage
 
@@ -79,7 +71,6 @@ cargo run
 * Solve it once with a stack (DFS)
 * Solve it again with a queue (BFS)
 
----
 ### Example Output
 ```
 Loading maze from file: "mazes/example.txt"
@@ -87,7 +78,6 @@ Maze loaded successfully!
 Solved with a stack: true
 Solved with a queue: true
 ```
----
 ## Technologies Used
 * Rust → safe systems programming
 * Traits & Generics → reusable solver interface (Agenda)
