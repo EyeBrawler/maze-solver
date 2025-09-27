@@ -38,7 +38,7 @@ mazes/ # Place your maze .txt files here
 
 ### 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/maze-solver.git
+   git clone https://github.com/EyeBrawler/maze-solver.git
    cd maze-solver
    ```
 
