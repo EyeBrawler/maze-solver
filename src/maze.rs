@@ -80,26 +80,11 @@ impl Maze {
         })
     }
 
-    //Method to find the starting location of the maze.
-    //Returns a Location struct wrapped in an option (in case there is no start)
-    fn find_start(&self) -> Option<Location> {
-        //Nested for loop to look through all locations
+    // Generalized function to find the first occurrence of a given square type
+    fn find_square(&self, target: Square) -> Option<Location> {
         for y in 0..self.height {
             for x in 0..self.width {
-                if self.layout[y][x] == Square::Start {
-                    return Some(Location { x, y });
-                }
-            }
-        }
-        None
-    }
-
-    //Method to find the finish location of a maze.
-    //Returns a Location struct wrapped in an option (just in case there is no finish).
-    fn find_finish(&self) -> Option<Location> {
-        for y in 0..self.height {
-            for x in 0..self.width {
-                if self.layout[y][x] == Square::Finish {
+                if self.layout[y][x] == target {
                     return Some(Location { x, y });
                 }
             }
@@ -127,8 +112,8 @@ impl Maze {
 
     pub fn solve<A: Agenda<Location>>(&self, mut agenda: A) -> bool {
         // Find the start and finish locations.
-        let start = self.find_start().expect("No start location found.");
-        let finish = self.find_finish().expect("No finish location found.");
+        let start = self.find_square(Square::Start).expect("No start location found.");
+        let finish = self.find_square(Square::Finish).expect("No finish location found.");
 
         // A hash set to store visited locations.
         let mut visited = HashSet::new();
